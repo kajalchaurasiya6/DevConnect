@@ -8,8 +8,6 @@ const Hero = () => {
     Get Started
   </button>
 </div>
-
   )
 }
-
 export default Hero;
