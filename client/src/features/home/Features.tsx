@@ -1,7 +1,7 @@
 import { EMOJIS } from "@/utils/constants"
 const Features = () => {
   return (
-<div className="p-4 mt-2 rounded-md dark:bg-slate-800 bg-gray-200">
+<div className="p-4 mt-2 rounded-md dark:bg-slate-700 bg-gray-200">
   <h2 className="text-3xl font-semibold  text-center mb-10">Features</h2>
   <div className="grid md:grid-cols-3 gap-6 text-center">
     <div>
