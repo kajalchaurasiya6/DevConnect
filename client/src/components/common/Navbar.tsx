@@ -1,4 +1,4 @@
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 import { Bars3Icon, MoonIcon, PowerIcon, SunIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 type NavbarProps = {
