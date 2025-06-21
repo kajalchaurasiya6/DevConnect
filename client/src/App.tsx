@@ -11,12 +11,12 @@ function App() {
  <BrowserRouter>
       <Routes>
         {/* Optional standalone route (like login) */}
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
         {/* All routes that use Layout */}
         <Route element={<ThemeProvider><Layout/></ThemeProvider>}>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<HomePage />} />
           <Route path="/settings" element={<HomePage />} />
         </Route>

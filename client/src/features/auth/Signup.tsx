@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SignupPage = () => {
   return (
     <div className="flex flex-col  md:flex-row h-screen w-2/10">
-      <div className="hidden md:flex w-full md:w-1/2 relative flex-col justify-center px-10 bg-gradient-to-tr from-indigo-200 via-zinc-300 to-indigo-400">
+      <div className="hidden md:flex w-full md:w-1/2 relative flex-col justify-center px-10 bg-gradient-to-tr from-indigo-200 via-zinc-300 to-pink-300">
         <div>
           <h1 className="text-3xl font-bold font-serif text-slate-800 mb-4">
             Join DevConnect — a space where developers collaborate, share ideas, and grow together.
@@ -42,11 +42,11 @@ const SignupPage = () => {
 
             <label className="flex items-center gap-2 text-sm text-gray-600">
               <input type="checkbox" className="accent-indigo-600" />
-              I accept the <a href="#" className="text-blue-600 underline">Term</a>
+              I accept the <Link to="#" className="text-indigo-600">Term</Link>
             </label>
             <button
               type="submit"
-              className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+              className="w-full py-2 bg-gradient-to-tr from-indigo-500 via-indigo-200-300 to-pink-500 text-white rounded-md hover:bg-blue-700 transition"
             >
               Sign Up
             </button>
@@ -63,13 +63,11 @@ const SignupPage = () => {
               </button>
 
             </div>
-
-
           </form>
 
           <p className="text-sm text-center mt-4 text-gray-500">
             Already have an account?{" "}
-            <Link to="/" className="text-blue-600 underline">
+            <Link to="/login" className="text-indigo-600">
               Sign In
             </Link>
           </p>

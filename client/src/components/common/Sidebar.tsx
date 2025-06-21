@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
     >
       <nav className="flex flex-col space-y-4 p-2 overflow-y-auto">
         {[
-          { to: '/home', label: 'Home', icon: HomeIcon },
+          { to: '/', label: 'Home', icon: HomeIcon },
           { to: '/profile', label: 'Profile', icon: UserIcon },
           { to: '/settings', label: 'Settings', icon: Cog6ToothIcon },
         ].map(({ to, label, icon: Icon }) => (
