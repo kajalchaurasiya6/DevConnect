@@ -21,8 +21,7 @@ const SignupPage = () => {
       </div>
       <div className="w-full md:w-1/2 h-full flex items-center justify-center bg-gradient-to-tr from-indigo-100 via-zinc-200 to-indigo-200">
         <div className="bg-white w-full max-w-md mx-4 md:mx-0 rounded-2xl shadow-md p-6 md:p-8">
-          <h2 className="text-2xl font-semibold text-gray-900">Sign Up</h2>
-          <p className="text-sm text-gray-500 mb-6">Your Social Campaigns</p>
+          <h2 className="text-2xl font-semibold text-gray-700 mb-5 text-center">Sign Up</h2>
           <form className="space-y-4">
             <input
               type="email"
