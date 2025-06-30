@@ -2,7 +2,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { signupSchema, type SignupSchemaType } from "./auth.types";
+import { signupSchema, type SignupSchemaType } from "../types/auth.types";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 

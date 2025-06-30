@@ -1,6 +1,6 @@
 import { EMOJIS } from "@/utils/constants";
 import Hero from "./Hero"
-import Post from "../posts/components/Post";
+import Post from "../../posts/components/Post";
 import Features from "./Features";
 const trendingPosts = [
     { title: "AI is taking over design!", author: "Jane Doe", time: "2h ago", tag: "AI" },

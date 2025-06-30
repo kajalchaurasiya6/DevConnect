@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { loginSchema, type LoginSchemaType } from "./auth.types";
+import { loginSchema, type LoginSchemaType } from "../types/auth.types";
 
 const LoginForm = () => {
   const navigate = useNavigate();

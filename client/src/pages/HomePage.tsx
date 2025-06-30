@@ -1,9 +1,9 @@
-import Home from "@/features/home/Home"
+import Home from "@/features/home/components/Home"
 
 const HomePage = () => {
   return (
     <div>
-      <Home/>
+      <Home />
     </div>
   )
 }
