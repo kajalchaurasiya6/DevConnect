@@ -1,5 +1,4 @@
 // src/components/LoginForm.tsx
-import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -13,14 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-
-// 1. Schema for validation
-const loginSchema = z.object({
-  email: z.string().email("Invalid email"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
-});
-
-type LoginSchemaType = z.infer<typeof loginSchema>;
+import { loginSchema, type LoginSchemaType } from "./auth.types";
 
 const LoginForm = () => {
   const navigate = useNavigate();
