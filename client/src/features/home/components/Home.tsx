@@ -1,4 +1,4 @@
-import { EMOJIS } from "@/utils/constants";
+import { EMOJIS } from "@/constants/constants";
 import Hero from "./Hero"
 import Post from "../../posts/components/Post";
 import Features from "./Features";

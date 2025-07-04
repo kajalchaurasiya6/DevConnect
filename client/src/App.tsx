@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-toastify';
 import Layout from './components/layouts/Layout';
 import { ThemeProvider } from './context/ThemeContext';
 import Login from './features/auth/components/Login';
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ToastContainer position="top-right" autoClose={3000} />
         <Routes>
           {/* Optional standalone route (like login) */}
           <Route path="/login" element={<Login />} />

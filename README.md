@@ -16,11 +16,39 @@ It is inspired by platforms like Instagram and LinkedIn, with a focus on develop
 - 📊 Developer dashboard with charts (coming soon)
 - ⚙️ Responsive layout (Navbar, Sidebar, Footer)
 
-## 🚧 Status
+---
+## 🚀 Project Status
+ Frontend
+✅ Layout: Fully responsive layout completed
 
-- ✅ Layout complete
-- 🔐 Authentication complete
-- 📈 Dashboard setup upcoming
+🔐 Authentication:
+
+Implemented secure login and signup functionality
+
+Integrated refresh token and access token mechanism
+
+🔄 API Integration: Connected frontend with backend authentication APIs using secure token-based communication
+
+🧠 Backend
+🏗️ Setup:
+
+Backend environment initialized with Node.js and Express
+
+Connected to MongoDB Atlas for cloud database storage
+
+🔐 Authentication APIs:
+
+POST /signup – Create new user accounts
+
+POST /login – User authentication with access and refresh tokens
+
+POST /refresh – Refresh token logic to maintain session
+
+🛡️ Security:
+
+Used JWT for secure token management
+
+Stored refresh tokens safely to prevent misuse
 
 ## 🔧 Tech Stack:
  🖥️ Frontend

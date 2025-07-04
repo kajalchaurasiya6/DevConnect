@@ -2,7 +2,10 @@ import { z } from "zod";
 
 export const loginSchema = z.object({
     email: z.string().email("Invalid email"),
-    password: z.string().min(6, "Password must be at least 6 characters"),
+    password: z.string().min(6, "Password must be at least 6 characters")
+        .refine((val) => /[@_#]/.test(val), {
+            message: "Password must include at least one of @, _ or #",
+        }),
 });
 export type LoginSchemaType = z.infer<typeof loginSchema>;
 

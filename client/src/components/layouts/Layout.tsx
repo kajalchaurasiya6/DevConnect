@@ -11,13 +11,12 @@ const Layout = () => {
     <div className="flex flex-col h-screen overflow-hidden dark:bg-gray-900 bg-gray-100">
       <Sidebar isOpen={isSidebarOpen} />
       <div
-        className={`flex-1 transition-all duration-300 ml-16 ${
-          isSidebarOpen ? "md:ml-64" : "ml-16"
-        }`}
+        className={`flex-1 transition-all duration-300 ml-16 ${isSidebarOpen ? "md:ml-64" : "ml-16"
+          }`}
       >
         <Navbar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <main className="my-16 p-3 pb-0 max-h-[calc(100vh-140px)] overflow-y-auto">
-          <Outlet /> 
+          <Outlet />
         </main>
         <Footer />
       </div>

@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { signupSchema, type SignupSchemaType } from "../types/auth.types";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { signupUser } from "../services/authService";
+import { showErrorToast, showSuccessToast } from "@/lib/toastify";
 
 // src/pages/Signup.tsx
 
@@ -20,8 +22,14 @@ const SignupPage = () => {
     },
   });
   const onSubmit = (data: SignupSchemaType) => {
-    console.log("Submitted:", data);
-    navigate('/login');
+    signupUser(data).then((data) => {
+      console.log(data);
+      showSuccessToast('User created !', 1000)
+    }).then(() => {
+      navigate('/login');
+    }).catch((error) => {
+      showErrorToast(error);
+    })
   };
   return (
     <div className="flex flex-col  md:flex-row h-screen w-2/10">
@@ -78,7 +86,7 @@ const SignupPage = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="Placeholder" {...field} />
+                      <Input type="password" placeholder="Password" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -97,7 +105,7 @@ const SignupPage = () => {
                 <div className="flex flex-col">
                   <Button
                     type="button"
-                    className=" border  rounded-md  text-sm flex items-center justify-center"
+                    className=" border bg-white hover:bg-slate-50  rounded-md  text-sm flex items-center justify-center"
                   >
                     <img src="https://img.icons8.com/color/16/000000/google-logo.png" />
                     <p className="text-gray-800">Sign In with Google</p>

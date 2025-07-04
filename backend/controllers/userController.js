@@ -1,10 +1,11 @@
+const { generateAccessToken, generateRefreshToken } = require("../helper/authutility");
 const User = require("../models/User");
 const bcrypt = require('bcryptjs');
 exports.registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
         const userExists = await User.findOne({ email });
-        if (userExists) return res.status(400).json({ message: 'User already exists' });
+        if (userExists) return res.status(400).json({ message: 'User already exists', ok: false });
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
         const user = await User.create({
@@ -13,9 +14,13 @@ exports.registerUser = async (req, res) => {
             password: hashedPassword
         });
         res.status(201).json({
-            _id: user._id,
-            name: user.name,
-            email: user.email
+            data: {
+                _id: user._id,
+                name: user.name,
+                email: user.email
+            },
+            message: 'User Created',
+            ok: true
         });
 
     } catch (error) {
@@ -39,6 +44,7 @@ exports.loginUser = async (req, res) => {
         });
         res.json({
             accessToken,
+            message: 'logged in succesfully',
             user: {
                 _id: user._id,
                 name: user.name,

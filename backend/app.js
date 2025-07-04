@@ -8,7 +8,10 @@ const userRoutes = require('./routes/userRoutes'); // ✅ Import first
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173", // your frontend origin
+    credentials: true, // if using cookies
+}));
 app.use(express.json());
 
 // Routes
