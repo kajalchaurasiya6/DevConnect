@@ -15,10 +15,10 @@ const Layout = () => {
           }`}
       >
         <Navbar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <main className="my-16 p-3 pb-0 max-h-[calc(100vh-140px)] overflow-y-auto">
+        <main className="my-16 p-3 pb-0 max-h-[calc(100vh-132px)] overflow-y-auto">
           <Outlet />
         </main>
-        <Footer />
+        <Footer isOpen={isSidebarOpen} />
       </div>
     </div>
   );

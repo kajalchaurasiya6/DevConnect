@@ -16,7 +16,7 @@ const Navbar = ({ toggleSidebar }: NavbarProps) => {
       navigate('/login');
    }
    return (
-      <nav className={`w-full h-16   fixed top-0 left-0 right-0 dark:bg-gray-800 bg-slate-100 bg-opacity-10 flex items-center justify-between px-4 border-b-[0.001rem] dark:border-gray-100 border-gray-300`}>
+      <nav className={`w-full h-16   fixed top-0 left-0 right-0 dark:bg-gray-800 bg-[#9bd1b7] shadow-sm  flex items-center justify-between px-4 border-b-[0.001rem] dark:border-gray-600 border-gray-400`}>
          <div className="flex gap-4  w-64 items-center h-16">
             <button onClick={toggleSidebar} className="relative  group text-[#3c3b3b] dark:text-white">
                <Bars3Icon className="h-6 w-6" />
