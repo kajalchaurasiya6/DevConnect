@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { Bars3Icon, MoonIcon, PowerIcon, SunIcon, UserCircleIcon } from "@heroicons/react/24/outline";
-import { logoutUser } from "@/features/auth/services/authService";
+import { useAuth } from "@/context/AuthContext";
 
 type NavbarProps = {
    isOpen: boolean;
@@ -9,13 +9,11 @@ type NavbarProps = {
 }
 const Navbar = ({ toggleSidebar }: NavbarProps) => {
    const { theme, toggleTheme } = useTheme();
+   const { logout } = useAuth();
    const navigate = useNavigate();
    const handleLogout = () => {
-      logoutUser()?.then(() => {
-         navigate('/login');
-      }).catch((error) => {
-         console.log(error);
-      })
+      logout();
+      navigate('/login');
    }
    return (
       <nav className={`w-full h-16   fixed top-0 left-0 right-0 dark:bg-gray-800 bg-slate-100 bg-opacity-10 flex items-center justify-between px-4 border-b-[0.001rem] dark:border-gray-100 border-gray-300`}>

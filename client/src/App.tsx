@@ -1,11 +1,10 @@
 import { ToastContainer } from 'react-toastify';
 import Layout from './components/layouts/Layout';
 import { ThemeProvider } from './context/ThemeContext';
-import Login from './features/auth/components/Login';
-import Signup from './features/auth/components/Signup';
 import './index.css';
-import HomePage from './pages/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { layoutRoutes, publicRoutes } from './routes/routes';
+import ProtectedRoute from './features/auth/ProtectedRoute';
 function App() {
   return (
     <>
@@ -13,14 +12,17 @@ function App() {
         <ToastContainer position="top-right" autoClose={3000} />
         <Routes>
           {/* Optional standalone route (like login) */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {publicRoutes.map(({ path, element: Element }) => (
+            <Route key={path} path={path} element={<Element />} />
+          ))}
 
           {/* All routes that use Layout */}
-          <Route element={<ThemeProvider><Layout /></ThemeProvider>}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/profile" element={<HomePage />} />
-            <Route path="/settings" element={<HomePage />} />
+          <Route element={<ProtectedRoute />}>
+            <Route element={<ThemeProvider><Layout /></ThemeProvider>}>
+              {layoutRoutes.map(({ path, element: Element }) => (
+                <Route key={path} path={path} element={<Element />} />
+              ))}
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

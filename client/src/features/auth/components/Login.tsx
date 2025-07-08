@@ -14,12 +14,12 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema, type LoginSchemaType } from "../types/auth.types";
 import { loginUser } from "../services/authService";
-import { useState } from "react";
 import { showErrorToast, showSuccessToast } from "@/lib/toastify";
+import { useAuth } from "@/context/AuthContext";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const [, setToken] = useState<string>('');
+  const { login } = useAuth();
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -30,7 +30,7 @@ const LoginForm = () => {
 
   const onSubmit = (data: LoginSchemaType) => {
     loginUser(data).then((data) => {
-      setToken(data.accessToken);
+      login(data.accessToken);
       navigate('/');
       showSuccessToast(data?.message);
     }).catch((error) => {
