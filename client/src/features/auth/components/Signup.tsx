@@ -50,7 +50,7 @@ const SignupPage = () => {
       </div>
       <div className="w-full md:w-1/2 h-full flex items-center justify-center bg-gradient-to-tr from-indigo-100 via-zinc-200 to-indigo-200">
         <div className="bg-white text-slate-800 w-full max-w-md mx-4 md:mx-0 rounded-2xl shadow-md p-6 md:p-8">
-          <h2 className="text-2xl font-semibold text-gray-700 mb-5 text-center">Sign Up</h2>
+          <h2 className="text-2xl font-semibold text-gray-700 mb-3 text-center">Sign Up</h2>
           <Form {...form}>
             <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
               <FormField
@@ -92,7 +92,7 @@ const SignupPage = () => {
                   </FormItem>
                 )}
               />
-              <div className="flex flex-col space-y-2 w-full">
+              <div className="w-full">
                 <Button
                   type="submit"
                   className="w-full py-2 bg-gradient-to-tr from-indigo-500 via-indigo-200-300 to-pink-500 text-white rounded-md hover:bg-blue-700 transition"
@@ -100,17 +100,8 @@ const SignupPage = () => {
                   Sign Up
                 </Button>
 
-                <div className="text-sm text-center text-gray-400 ">Or</div>
 
-                <div className="flex flex-col">
-                  <Button
-                    type="button"
-                    className=" border bg-white hover:bg-slate-50  rounded-md  text-sm flex items-center justify-center"
-                  >
-                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" />
-                    <p className="text-gray-800">Sign In with Google</p>
-                  </Button>
-                </div>
+
               </div>
             </form>
           </Form>
