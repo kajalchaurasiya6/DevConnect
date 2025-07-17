@@ -1,3 +1,4 @@
+import ProfilePage from '@/features/users/components/Profile';
 import { lazy } from 'react';
 
 // Lazy-loaded components
@@ -12,6 +13,6 @@ export const publicRoutes = [
 
 export const layoutRoutes = [
     { path: '/', element: HomePage },
-    { path: '/profile', element: HomePage },
+    { path: '/profile', element: ProfilePage },
     { path: '/settings', element: HomePage },
 ];
